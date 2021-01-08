@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Particle </title>
+    <script src="particle2.js"></script>
+</head>
+<body>
+	<!-- Добавление области для рисования частицы -->
+    <canvas id="canvasBalls" width="500" height="500" style="border:1px solid #000000;"></canvas
+	
+	<!-- Масса 1 -->
+	<div>
+	    m1 =
+        <input id="Text_m1" style="width: 4.2ex;" required pattern="[-+]?([0-9]*\.[0-9]+|[0-9]+)" oninput="
+            if (!this.checkValidity()) return;
+            app.set_m1(this.value);
+            document.getElementById('Slider_m1').value = this.value;
+        ">
+		<input type = "range"  id="Slider_m1" style="width: 100px;" oninput="app.set_m1(this.value); document.getElementById('Text_m1').value = this.value;">
+        </I></font>
+    </div>
+	
+	<!-- Жесткость 1-->
+	<div>
+	    c1 =
+        <input id="Text_c1" style="width: 4.2ex;" required pattern="[-+]?([0-9]*\.[0-9]+|[0-9]+)" oninput="
+            if (!this.checkValidity()) return;
+            app.set_c1(this.value);
+            document.getElementById('Slider_c1').value = this.value;
+        ">
+		<input type = "range"  id="Slider_c1" style="width: 100px;" oninput="app.set_c1(this.value); document.getElementById('Text_c1').value = this.value;">
+        </I></font>
+    </div>
+	
+	<!-- Частота-->
+	<div>
+	    p =
+        <input id="Text_p" style="width: 4.2ex;" required pattern="[-+]?([0-9]*\.[0-9]+|[0-9]+)" oninput="
+            if (!this.checkValidity()) return;
+            app.set_p(this.value);
+            document.getElementById('Slider_p').value = this.value;
+        ">
+		<input type = "range"  id="Slider_p" style="width: 100px;" oninput="app.set_p(this.value); document.getElementById('Text_p').value = this.value;">
+        </I></font>
+    </div>
+	<div id="text"> </div>
+    <script type="text/javascript"> app = new MainParticle(document.getElementById('canvasBalls'));</script>
+</body>
+</html>
